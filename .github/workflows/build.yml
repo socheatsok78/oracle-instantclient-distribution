@@ -26,8 +26,11 @@ jobs:
       matrix:
         version:
           - v19
+          - v19-lite
           - v21
+          - v21-lite
           - v23
+          - v23-lite
     steps:
       - name: Checkout
         uses: actions/checkout@v4

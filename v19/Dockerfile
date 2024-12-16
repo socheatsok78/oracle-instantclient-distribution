@@ -1,17 +1,23 @@
-FROM scratch AS oic-release-amd64
-ADD https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.x64-19.25.0.0.0dbru.zip /instantclient-basiclite-linux.zip
+ARG PACKAGE=basic
 
-FROM scratch AS oic-release-arm64
-ADD https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.arm64-19.25.0.0.0dbru.zip /instantclient-basiclite-linux.zip
+FROM scratch AS instantclient-basic-amd64
+ADD https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.x64-19.25.0.0.0dbru.zip /instantclient-linux.zip
+FROM scratch AS instantclient-basic-arm64
+ADD https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.arm64-19.25.0.0.0dbru.zip /instantclient-linux.zip
 
-FROM oic-release-${TARGETARCH} AS oic-release
+FROM scratch AS instantclient-basiclite-amd64
+ADD https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basiclite-linux.x64-19.25.0.0.0dbru.zip /instantclient-linux.zip
+FROM scratch AS instantclient-basiclite-arm64
+ADD https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basiclite-linux.arm64-19.25.0.0.0dbru.zip /instantclient-linux.zip
+
+FROM instantclient-${PACKAGE}-${TARGETARCH} AS instantclient
 
 FROM alpine:latest AS oic
-COPY --from=oic-release /instantclient-basiclite-linux.zip /tmp/instantclient-basiclite-linux.zip
+COPY --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip
 RUN <<EOF
 apk add --no-cache --virtual .build-deps unzip
 mkdir -p /opt/oracle
-unzip /tmp/instantclient-basiclite-linux.zip -d /opt/oracle
+unzip /tmp/instantclient-linux.zip -d /opt/oracle
 ln -s /opt/oracle/instantclient_*/ /opt/oracle/instantclient
 EOF
 
