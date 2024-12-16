@@ -21,7 +21,7 @@ FROM socheatsok78/oracle-instantclient-distribution:v19 AS oicd-distribution
 # Final
 FROM alpine:latest
 ENV PATH=/opt/oracle/instantclient:$PATH
-ENV LD_LIBRARY_PATH=/opt/oracle/instantclient:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient
 RUN apk add --no-cache gcompat libaio
 COPY --from=oicd-distribution /opt/oracle /opt/oracle
 ```
@@ -36,7 +36,7 @@ FROM oicd-distribution-${TARGETARCH} AS oracle-instantclient
 # Final
 FROM alpine:latest
 ENV PATH=/opt/oracle/instantclient:$PATH
-ENV LD_LIBRARY_PATH=/opt/oracle/instantclient:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient
 RUN apk add --no-cache gcompat libaio
 COPY --from=oicd-distribution /opt/oracle /opt/oracle
 ```
