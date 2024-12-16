@@ -1,9 +1,11 @@
 # About
 The Oracle Instant Client distribution as container image
 
+[Source](https://github.com/socheatsok78/oracle-instantclient-distribution)
+
 ## Supported platforms
 - `linux/amd64`
-- `linux/arm64` * (Only for Oracle Instant Client v19.25)
+- `linux/arm64` * (Only available for Oracle Instant Client v19)
 
 ## Usage
 
