@@ -6,39 +6,38 @@ target "github-metadata-action" {}
 
 group "default" {
     targets = [
-        "v19-default",
-        "v21-default",
-        "v23-default",
-    ]
-}
-
-group "dev" {
-    targets = [
         "v19",
         "v21",
         "v23",
     ]
 }
 
-# v19
+group "dev" {
+    targets = [
+        "v19-dev",
+        "v21-dev",
+        "v23-dev",
+    ]
+}
+
 target "v19" {
-    inherits = ["github-metadata-action"]
+    context = "v19"
+    platforms = [
+        "linux/amd64",
+        "linux/arm64",
+    ]
+    tags = [
+        "${GITHUB_REPOSITORY}:v19"
+    ]
+}
+target "v19-dev" {
     context = "v19"
     tags = [
         "${GITHUB_REPOSITORY}:v19"
     ]
 }
-target "v19-default" {
-    inherits = ["v19"]
-    platforms = [
-        "linux/amd64",
-        "linux/arm64",
-    ]
-}
 
-# v21
 target "v21" {
-    inherits = ["github-metadata-action"]
     context = "v21"
     platforms = [
         "linux/amd64",
@@ -47,16 +46,14 @@ target "v21" {
         "${GITHUB_REPOSITORY}:v21"
     ]
 }
-target "v21-default" {
-    inherits = ["v21"]
-    platforms = [
-        "linux/amd64",
+target "v21-dev" {
+    context = "v21"
+    tags = [
+        "${GITHUB_REPOSITORY}:v21"
     ]
 }
 
-# v23
 target "v23" {
-    inherits = ["github-metadata-action"]
     context = "v23"
     platforms = [
         "linux/amd64",
@@ -65,9 +62,9 @@ target "v23" {
         "${GITHUB_REPOSITORY}:v23"
     ]
 }
-target "v23-default" {
-    inherits = ["v23"]
-    platforms = [
-        "linux/amd64",
+target "v23-dev" {
+    context = "v23"
+    tags = [
+        "${GITHUB_REPOSITORY}:v23"
     ]
 }

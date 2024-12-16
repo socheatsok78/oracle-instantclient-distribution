@@ -1,6 +1,9 @@
 FROM scratch AS oic-release-amd64
 ADD https://download.oracle.com/otn_software/linux/instantclient/2116000/instantclient-basic-linux.x64-21.16.0.0.0dbru.zip /instantclient-basiclite-linux.zip
 
+FROM scratch AS oic-release-arm64
+# No ARM64 release available, use AMD64
+
 FROM oic-release-${TARGETARCH} AS oic-release
 
 FROM alpine:latest AS oic
