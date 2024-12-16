@@ -1,6 +1,8 @@
-variable "DOCKER_IMAGE" {
+variable "GITHUB_REPOSITORY" {
     default = "socheatsok78/oracle-instantclient-distribution"
 }
+
+target "github-metadata-action" {}
 
 group "default" {
     targets = [
@@ -20,9 +22,10 @@ group "dev" {
 
 # v19
 target "v19" {
+    inherits = ["github-metadata-action"]
     context = "v19"
     tags = [
-        "${DOCKER_IMAGE}:v19"
+        "${GITHUB_REPOSITORY}:v19"
     ]
 }
 target "v19-default" {
@@ -35,12 +38,13 @@ target "v19-default" {
 
 # v21
 target "v21" {
+    inherits = ["github-metadata-action"]
     context = "v21"
     platforms = [
         "linux/amd64",
     ]
     tags = [
-        "${DOCKER_IMAGE}:v21"
+        "${GITHUB_REPOSITORY}:v21"
     ]
 }
 target "v21-default" {
@@ -52,12 +56,13 @@ target "v21-default" {
 
 # v23
 target "v23" {
+    inherits = ["github-metadata-action"]
     context = "v23"
     platforms = [
         "linux/amd64",
     ]
     tags = [
-        "${DOCKER_IMAGE}:v23"
+        "${GITHUB_REPOSITORY}:v23"
     ]
 }
 target "v23-default" {
