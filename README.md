@@ -1,7 +1,12 @@
 # About
 The Oracle Instant Client distribution as container image
 
-[Source](https://github.com/socheatsok78/oracle-instantclient-distribution)
+[Source](https://github.com/socheatsok78/oracle-instantclient-distribution) | [Docker Hub](https://hub.docker.com/r/socheatsok78/oracle-instantclient-distribution) | [GitHub Container Registry](https://ghcr.io/socheatsok78/oracle-instantclient-distribution)
+
+## Tags
+- `v19`, `v19-lite`
+- `v21`, `v21-lite`
+- `v23`, `v23-lite`
 
 ## Supported platforms
 - `linux/amd64`
