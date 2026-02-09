@@ -153,18 +153,6 @@ function main.check() {
 	elif instantclient.checkurl "$(instantclient.otn_software.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip"; then
 		stdout "$(instantclient.otn_software.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip"
 		exit 0
-	elif [[ "${arch}" != "arm64" ]]; then
-		instantclient="$(echo "$version" | cut -d. -f1-4 | tr -d .)"
-		if instantclient.checkurl "$(instantclient.otn.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}.zip"; then
-			stdout "$(instantclient.otn.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}.zip"
-			exit 0
-		elif instantclient.checkurl "$(instantclient.otn.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip"; then
-			stdout "$(instantclient.otn.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip"
-			exit 0
-		else
-			log.error "No download available for ${variant} ${arch} ${version}"
-			exit 1
-		fi
 	else
 		log.error "No download available for ${variant} ${arch} ${version}"
 		exit 1
