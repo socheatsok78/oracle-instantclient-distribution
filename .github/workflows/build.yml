@@ -17,20 +17,29 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.generate.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Generate matrix
+        id: generate
+        run: ./.github/scripts/generate-build-matrix.sh
+
   build:
+    needs:
+      - prepare
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     strategy:
+      fail-fast: false
       matrix:
-        version:
-          - v19
-          - v19-lite
-          - v21
-          - v21-lite
-          - v23
-          - v23-lite
+        include: ${{ fromJson(needs.prepare.outputs.matrix) }}
     steps:
 
       - name: Set up QEMU
@@ -69,8 +78,9 @@ jobs:
       - name: Build and push
         uses: docker/bake-action@v6
         with:
-          targets: ${{ matrix.version }}
+          targets: default
           push: ${{ github.event_name != 'pull_request' }}
+          source: "{{defaultContext}}:library/${{ matrix.version }}"
           files: |
             ./docker-bake.hcl
             cwd://${{ steps.docker-meta.outputs.bake-file }}
