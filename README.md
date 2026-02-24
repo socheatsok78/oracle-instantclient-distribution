@@ -12,13 +12,14 @@ Check the library directory for the exact versions available.
 
 ## Supported platforms
 - `linux/amd64`
-- `linux/arm64` * (Only available for Oracle Instant Client v19)
+- `linux/arm64` * (Only available for later versions of Oracle Instant Client, e.g. v23)
 
 ## Usage
 
 ```Dockerfile
 # Oracle Instant Client Distribution
-FROM socheatsok78/oracle-instantclient-distribution:v19 AS oicd-distribution
+ARG OICD_VERSION=23.26.1.0.0-basic
+FROM socheatsok78/oracle-instantclient-distribution:${OICD_VERSION} AS oicd-distribution
 
 # Final
 FROM alpine:latest
@@ -28,11 +29,13 @@ RUN apk add --no-cache gcompat libaio
 COPY --from=oicd-distribution /opt/oracle /opt/oracle
 ```
 
-If you are using multi-platform build, you can use the following workaround to build the image for both `linux/amd64` and `linux/arm64`:
+Some versions of Oracle Instant Client are only available for `linux/amd64` platform, so you may need to mix and match the versions and platforms as needed.
+
+For example, if you want to use Oracle Instant Client v19 on `linux/arm64` platform and Oracle Instant Client v23 on `linux/amd64` platform, you can do the following:
 
 ```Dockerfile
-FROM socheatsok78/oracle-instantclient-distribution:v23 AS oicd-distribution-amd64
-FROM socheatsok78/oracle-instantclient-distribution:v19 AS oicd-distribution-arm64
+FROM socheatsok78/oracle-instantclient-distribution:19.27.0.0.0-basic AS oicd-distribution-amd64
+FROM socheatsok78/oracle-instantclient-distribution:23.26.1.0.0-basic AS oicd-distribution-arm64
 FROM oicd-distribution-${TARGETARCH} AS oracle-instantclient
 
 # Final
