@@ -22,3 +22,5 @@ EOF
 
 FROM scratch
 COPY --from=oic /opt/oracle /opt/oracle
+
+# Test editing library/23.26.1.0.0/Dockerfile file
