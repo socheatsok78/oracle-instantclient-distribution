@@ -49,3 +49,7 @@ COPY --from=oicd-distribution /opt/oracle /opt/oracle
 ## References
 - https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
 - https://www.oracle.com/database/technologies/instant-client/linux-arm-aarch64-downloads.html
+
+## License
+
+The Oracle Instant Client is licensed under the Oracle Technology Network License Agreement for Oracle Instant Client. Please refer to the [license agreement](https://www.oracle.com/downloads/licenses/instant-client-lic.html) for more details.
