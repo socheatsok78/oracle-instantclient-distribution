@@ -6,94 +6,94 @@
 RELEASE_FILE="releases.json"
 
 function dockerbakefile () {
-    local release=$1
-    local version=$2
-    echo "variable \"GITHUB_REPOSITORY\" {"
-    echo "  default = \"socheatsok78/oracle-instantclient-distribution\""
-    echo "}"
-    echo ""
-    echo "variable \"VERSION\" {"
-    echo "  default = \"$version\""
-    echo "}"
-    echo ""
-    echo "target \"docker-metadata-action\" {}"
-    echo ""
-    echo "target \"github-metadata-action\" {}"
-    echo ""
-    echo "target \"default\" {"
-    echo "  matrix = {"
-    echo "    \"VARIANT\" = ["
-    echo "      \"basic\","
-    echo "      \"basiclite\","
-    echo "    ]"
-    echo "  }"
-    echo "  name = \"\${VARIANT}\""
-    echo "  args = {"
-    echo "    \"VARIANT\" = VARIANT"
-    echo "  }"
-    echo "  platforms = ["
-    echo "    \"linux/amd64\","
-    if [[ "$(jq -r ".[\"$release\"].basic.arm64" "${RELEASE_FILE}")" != "null" ]]; then
-        echo "    \"linux/arm64\","
-    fi
-    echo "  ]"
-    echo "  tags = ["
-    echo "    \"\${GITHUB_REPOSITORY}:\${VERSION}-\${VARIANT}\","
-    echo "  ]"
-    echo "}"
+	local release=$1
+	local version=$2
+	echo "variable \"GITHUB_REPOSITORY\" {"
+	echo "  default = \"socheatsok78/oracle-instantclient-distribution\""
+	echo "}"
+	echo ""
+	echo "variable \"VERSION\" {"
+	echo "  default = \"$version\""
+	echo "}"
+	echo ""
+	echo "target \"docker-metadata-action\" {}"
+	echo ""
+	echo "target \"github-metadata-action\" {}"
+	echo ""
+	echo "target \"default\" {"
+	echo "  matrix = {"
+	echo "    \"VARIANT\" = ["
+	echo "      \"basic\","
+	echo "      \"basiclite\","
+	echo "    ]"
+	echo "  }"
+	echo "  name = \"\${VARIANT}\""
+	echo "  args = {"
+	echo "    \"VARIANT\" = VARIANT"
+	echo "  }"
+	echo "  platforms = ["
+	echo "    \"linux/amd64\","
+	if [[ "$(jq -r ".[\"$release\"].basic.arm64" "${RELEASE_FILE}")" != "null" ]]; then
+		echo "    \"linux/arm64\","
+	fi
+	echo "  ]"
+	echo "  tags = ["
+	echo "    \"\${GITHUB_REPOSITORY}:\${VERSION}-\${VARIANT}\","
+	echo "  ]"
+	echo "}"
 }
 
 function dockerfile () {
-    local release=$1
-    local version=$2
-    echo "ARG VARIANT=basic"
-    echo ""
-    echo "FROM scratch AS instantclient-basic-amd64"
-    echo "ADD $(jq -r ".[\"$release\"].basic.x64" "${RELEASE_FILE}") /instantclient-linux.zip"
-    echo "FROM scratch AS instantclient-basic-arm64"
-    if [[ "$(jq -r ".[\"$release\"].basic.arm64" "${RELEASE_FILE}")" != "null" ]]; then
-        echo "ADD $(jq -r ".[\"$release\"].basic.arm64" "${RELEASE_FILE}") /instantclient-linux.zip"
-    else
-        echo "# No ARM64 artifact found for basic, skipping"
-    fi
-    echo ""
-    echo "FROM scratch AS instantclient-basiclite-amd64"
-    echo "ADD $(jq -r ".[\"$release\"].basiclite.x64" "${RELEASE_FILE}") /instantclient-linux.zip"
-    echo "FROM scratch AS instantclient-basiclite-arm64"
-    if [[ "$(jq -r ".[\"$release\"].basiclite.arm64" "${RELEASE_FILE}")" != "null" ]]; then
-        echo "ADD $(jq -r ".[\"$release\"].basiclite.arm64" "${RELEASE_FILE}") /instantclient-linux.zip"
-    else
-        echo "# No ARM64 artifact found for basiclite, skipping"
-    fi
-    echo ""
-    echo "FROM instantclient-\${VARIANT}-\${TARGETARCH} AS instantclient"
-    echo ""
-    echo "FROM ghcr.io/socheatsok78/unzip:latest AS oic"
-    echo "COPY --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip"
-    echo "RUN <<EOF"
-    echo -e "\tmkdir -p /opt/oracle"
-    echo -e "\tunzip /tmp/instantclient-linux.zip -d /opt/oracle"
-    echo -e "\tln -s /opt/oracle/instantclient_*/ /opt/oracle/instantclient"
-    echo "EOF"
-    echo ""
-    echo "FROM scratch"
-    echo "COPY --from=oic /opt/oracle /opt/oracle"
+	local release=$1
+	local version=$2
+	echo "ARG VARIANT=basic"
+	echo ""
+	echo "FROM scratch AS instantclient-basic-amd64"
+	echo "ADD $(jq -r ".[\"$release\"].basic.x64" "${RELEASE_FILE}") /instantclient-linux.zip"
+	echo "FROM scratch AS instantclient-basic-arm64"
+	if [[ "$(jq -r ".[\"$release\"].basic.arm64" "${RELEASE_FILE}")" != "null" ]]; then
+		echo "ADD $(jq -r ".[\"$release\"].basic.arm64" "${RELEASE_FILE}") /instantclient-linux.zip"
+	else
+		echo "# No ARM64 artifact found for basic, skipping"
+	fi
+	echo ""
+	echo "FROM scratch AS instantclient-basiclite-amd64"
+	echo "ADD $(jq -r ".[\"$release\"].basiclite.x64" "${RELEASE_FILE}") /instantclient-linux.zip"
+	echo "FROM scratch AS instantclient-basiclite-arm64"
+	if [[ "$(jq -r ".[\"$release\"].basiclite.arm64" "${RELEASE_FILE}")" != "null" ]]; then
+		echo "ADD $(jq -r ".[\"$release\"].basiclite.arm64" "${RELEASE_FILE}") /instantclient-linux.zip"
+	else
+		echo "# No ARM64 artifact found for basiclite, skipping"
+	fi
+	echo ""
+	echo "FROM instantclient-\${VARIANT}-\${TARGETARCH} AS instantclient"
+	echo ""
+	echo "FROM ghcr.io/socheatsok78/unzip:latest AS oic"
+	echo "COPY --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip"
+	echo "RUN <<EOF"
+	echo -e "\tmkdir -p /opt/oracle"
+	echo -e "\tunzip /tmp/instantclient-linux.zip -d /opt/oracle"
+	echo -e "\tln -s /opt/oracle/instantclient_*/ /opt/oracle/instantclient"
+	echo "EOF"
+	echo ""
+	echo "FROM scratch"
+	echo "COPY --from=oic /opt/oracle /opt/oracle"
 }
 
 
 for _release in `cat "${RELEASE_FILE}" | jq -r '. | keys | join("\n")'`; do
-    version=${_release}
-    lastbit="$(echo "$_release" | cut -d. -f5)"
-    if [[ -z "${lastbit}" ]]; then
-        version="${_release}.0"
-    fi
-    # if there's no artifact for this version, skip it
-    if [[ "$(jq -r ".\"$_release\".basic.x64" "${RELEASE_FILE}")" != "null" ]]; then
-        echo " => [RENDER] $version"
-        mkdir -p "library/$version"
-        dockerbakefile "$_release" "$version" > "library/$version/docker-bake.hcl"
-        dockerfile "$_release" "$version" > "library/$version/Dockerfile"
-    else
-        echo " => [SKIP] $version, no artifacts found"
-    fi
+	version=${_release}
+	lastbit="$(echo "$_release" | cut -d. -f5)"
+	if [[ -z "${lastbit}" ]]; then
+		version="${_release}.0"
+	fi
+	# if there's no artifact for this version, skip it
+	if [[ "$(jq -r ".\"$_release\".basic.x64" "${RELEASE_FILE}")" != "null" ]]; then
+		echo " => [RENDER] $version"
+		mkdir -p "library/$version"
+		dockerbakefile "$_release" "$version" > "library/$version/docker-bake.hcl"
+		dockerfile "$_release" "$version" > "library/$version/Dockerfile"
+	else
+		echo " => [SKIP] $version, no artifacts found"
+	fi
 done
