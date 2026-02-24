@@ -1,7 +1,7 @@
 # About
 The Oracle Instant Client distribution as container image
 
-[Source](https://github.com/socheatsok78/oracle-instantclient-distribution) | [Docker Hub](https://hub.docker.com/r/socheatsok78/oracle-instantclient-distribution) | [GitHub Container Registry](https://ghcr.io/socheatsok78/oracle-instantclient-distribution)
+[Source](https://github.com/socheatsok78/docker-oracle-instantclient) | [Docker Hub](https://hub.docker.com/r/socheatsok78/oracle-instantclient) | [GitHub Container Registry](https://ghcr.io/socheatsok78/oracle-instantclient)
 
 ## Supported versions
 - `19.x.x.x.x-basic`, `19.x.x.x.x-basiclite`
@@ -19,7 +19,7 @@ Check the library directory for the exact versions available.
 ```Dockerfile
 # Oracle Instant Client Distribution
 ARG OICD_VERSION=23.26.1.0.0-basic
-FROM socheatsok78/oracle-instantclient-distribution:${OICD_VERSION} AS oicd-distribution
+FROM socheatsok78/oracle-instantclient:${OICD_VERSION} AS oicd-distribution
 
 # Final
 FROM alpine:latest
@@ -34,8 +34,8 @@ Some versions of Oracle Instant Client are only available for `linux/amd64` plat
 For example, if you want to use Oracle Instant Client v19 on `linux/arm64` platform and Oracle Instant Client v23 on `linux/amd64` platform, you can do the following:
 
 ```Dockerfile
-FROM socheatsok78/oracle-instantclient-distribution:19.27.0.0.0-basic AS oicd-distribution-amd64
-FROM socheatsok78/oracle-instantclient-distribution:23.26.1.0.0-basic AS oicd-distribution-arm64
+FROM socheatsok78/oracle-instantclient:19.27.0.0.0-basic AS oicd-distribution-amd64
+FROM socheatsok78/oracle-instantclient:23.26.1.0.0-basic AS oicd-distribution-arm64
 FROM oicd-distribution-${TARGETARCH} AS oracle-instantclient
 
 # Final
