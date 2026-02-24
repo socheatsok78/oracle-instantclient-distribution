@@ -50,8 +50,6 @@ function dockerbakefile () {
 	echo "    \"ghcr.io/\${replace(GITHUB_REPOSITORY, \"docker-\", \"\")}:\${VERSION}\","
 	echo "    \"docker.io/\${replace(GITHUB_REPOSITORY, \"docker-\", \"\")}:\${VERSION}-basic\","
 	echo "    \"ghcr.io/\${replace(GITHUB_REPOSITORY, \"docker-\", \"\")}:\${VERSION}-basic\","
-	echo "    \"docker.io/\${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:\${VERSION}-basic\","
-	echo "    \"ghcr.io/\${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:\${VERSION}-basic\","
 	echo "  ]"
 	echo "}"
 	echo ""
@@ -72,8 +70,6 @@ function dockerbakefile () {
 	echo "  tags = ["
 	echo "    \"docker.io/\${replace(GITHUB_REPOSITORY, \"docker-\", \"\")}:\${VERSION}-basiclite\","
 	echo "    \"ghcr.io/\${replace(GITHUB_REPOSITORY, \"docker-\", \"\")}:\${VERSION}-basiclite\","
-	echo "    \"docker.io/\${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:\${VERSION}-basiclite\","
-	echo "    \"ghcr.io/\${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:\${VERSION}-basiclite\","
 	echo "  ]"
 	echo "}"
 }

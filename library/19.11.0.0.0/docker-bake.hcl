@@ -37,8 +37,6 @@ target "oracle-instantclient-basic" {
     "ghcr.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}",
     "docker.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basic",
     "ghcr.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basic",
-    "docker.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basic",
-    "ghcr.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basic",
   ]
 }
 
@@ -56,7 +54,5 @@ target "oracle-instantclient-basiclite" {
   tags = [
     "docker.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basiclite",
     "ghcr.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basiclite",
-    "docker.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basiclite",
-    "ghcr.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basiclite",
   ]
 }
