@@ -187,7 +187,7 @@ function main.download() {
 	elif instantclient.checkurl "$(instantclient.otn_software.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip"; then
 		instantclient.download \
 			--url "$(instantclient.otn_software.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip" \
-			--output "instantclient-${variant}-linux.${arch}-${version}dbru.zip"
+			--output "instantclient-${variant}-linux.${arch}-${version}.zip"
 		exit 0
 	elif [[ "${arch}" != "arm64" ]]; then
 		instantclient="$(echo "$version" | cut -d. -f1-4 | tr -d .)"
@@ -199,7 +199,7 @@ function main.download() {
 		elif instantclient.checkurl "$(instantclient.otn.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip"; then
 			instantclient.download \
 				--url "$(instantclient.otn.to_str)/${instantclient}/instantclient-${variant}-linux.${arch}-${version}dbru.zip" \
-				--output "instantclient-${variant}-linux.${arch}-${version}dbru.zip"
+				--output "instantclient-${variant}-linux.${arch}-${version}.zip"
 			exit 0
 		else
 			log.error "No download available for ${variant} ${arch} ${version}"
