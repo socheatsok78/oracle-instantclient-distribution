@@ -1,0 +1,632 @@
+{
+  "23.26.1.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2326100/instantclient-basic-linux.x64-23.26.1.0.0.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2326100/instantclient-basic-linux.arm64-23.26.1.0.0.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2326100/instantclient-basiclite-linux.x64-23.26.1.0.0.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2326100/instantclient-basiclite-linux.arm64-23.26.1.0.0.zip"
+    }
+  },
+  "23.26.0.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.x64-23.26.0.0.0.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.arm64-23.26.0.0.0.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basiclite-linux.x64-23.26.0.0.0.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basiclite-linux.arm64-23.26.0.0.0.zip"
+    }
+  },
+  "23.9.0.25.07": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2390000/instantclient-basic-linux.x64-23.9.0.25.07.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2390000/instantclient-basic-linux.arm64-23.9.0.25.07.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2390000/instantclient-basiclite-linux.x64-23.9.0.25.07.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2390000/instantclient-basiclite-linux.arm64-23.9.0.25.07.zip"
+    }
+  },
+  "23.8.0.25.04": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2380000/instantclient-basic-linux.x64-23.8.0.25.04.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2380000/instantclient-basic-linux.arm64-23.8.0.25.04.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2380000/instantclient-basiclite-linux.x64-23.8.0.25.04.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2380000/instantclient-basiclite-linux.arm64-23.8.0.25.04.zip"
+    }
+  },
+  "23.7.0.25.01": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2370000/instantclient-basic-linux.x64-23.7.0.25.01.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2370000/instantclient-basic-linux.arm64-23.7.0.25.01.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2370000/instantclient-basiclite-linux.x64-23.7.0.25.01.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2370000/instantclient-basiclite-linux.arm64-23.7.0.25.01.zip"
+    }
+  },
+  "23.6.0.24.10": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2360000/instantclient-basic-linux.x64-23.6.0.24.10.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2360000/instantclient-basic-linux.arm64-23.6.0.24.10.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2360000/instantclient-basiclite-linux.x64-23.6.0.24.10.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/2360000/instantclient-basiclite-linux.arm64-23.6.0.24.10.zip"
+    }
+  },
+  "23.5.0.24.07": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2350000/instantclient-basic-linux.x64-23.5.0.24.07.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2350000/instantclient-basiclite-linux.x64-23.5.0.24.07.zip",
+      "arm64": null
+    }
+  },
+  "23.4.0.24.05": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2340000/instantclient-basic-linux.x64-23.4.0.24.05.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2340000/instantclient-basiclite-linux.x64-23.4.0.24.05.zip",
+      "arm64": null
+    }
+  },
+  "23.3.0.23.09": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "23.2.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.20.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2120000/instantclient-basic-linux.x64-21.20.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2120000/instantclient-basiclite-linux.x64-21.20.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.19.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2119000/instantclient-basic-linux.x64-21.19.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2119000/instantclient-basiclite-linux.x64-21.19.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.18.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2118000/instantclient-basic-linux.x64-21.18.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2118000/instantclient-basiclite-linux.x64-21.18.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.17.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2117000/instantclient-basic-linux.x64-21.17.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2117000/instantclient-basiclite-linux.x64-21.17.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.16.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2116000/instantclient-basic-linux.x64-21.16.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2116000/instantclient-basiclite-linux.x64-21.16.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.15.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2115000/instantclient-basic-linux.x64-21.15.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2115000/instantclient-basiclite-linux.x64-21.15.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.14.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2114000/instantclient-basic-linux.x64-21.14.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2114000/instantclient-basiclite-linux.x64-21.14.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.13.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2113000/instantclient-basic-linux.x64-21.13.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2113000/instantclient-basiclite-linux.x64-21.13.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.12.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2112000/instantclient-basic-linux.x64-21.12.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2112000/instantclient-basiclite-linux.x64-21.12.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.11.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2111000/instantclient-basic-linux.x64-21.11.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2111000/instantclient-basiclite-linux.x64-21.11.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.10.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2110000/instantclient-basic-linux.x64-21.10.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/2110000/instantclient-basiclite-linux.x64-21.10.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "21.9.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.8.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.7.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.6.0.0.1": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.6.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.5.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.4.0.0.1": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.4.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.3.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "21.1.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.30.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1930000/instantclient-basic-linux.x64-19.30.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1930000/instantclient-basic-linux.arm64-19.30.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1930000/instantclient-basiclite-linux.x64-19.30.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1930000/instantclient-basiclite-linux.arm64-19.30.0.0.0dbru.zip"
+    }
+  },
+  "19.29.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1929000/instantclient-basic-linux.x64-19.29.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1929000/instantclient-basic-linux.arm64-19.29.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1929000/instantclient-basiclite-linux.x64-19.29.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1929000/instantclient-basiclite-linux.arm64-19.29.0.0.0dbru.zip"
+    }
+  },
+  "19.28.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1928000/instantclient-basic-linux.x64-19.28.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1928000/instantclient-basic-linux.arm64-19.28.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1928000/instantclient-basiclite-linux.x64-19.28.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1928000/instantclient-basiclite-linux.arm64-19.28.0.0.0dbru.zip"
+    }
+  },
+  "19.27.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1927000/instantclient-basic-linux.x64-19.27.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1927000/instantclient-basic-linux.arm64-19.27.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1927000/instantclient-basiclite-linux.x64-19.27.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1927000/instantclient-basiclite-linux.arm64-19.27.0.0.0dbru.zip"
+    }
+  },
+  "19.26.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1926000/instantclient-basic-linux.x64-19.26.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1926000/instantclient-basic-linux.arm64-19.26.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1926000/instantclient-basiclite-linux.x64-19.26.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1926000/instantclient-basiclite-linux.arm64-19.26.0.0.0dbru.zip"
+    }
+  },
+  "19.25.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.x64-19.25.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.arm64-19.25.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basiclite-linux.x64-19.25.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basiclite-linux.arm64-19.25.0.0.0dbru.zip"
+    }
+  },
+  "19.24.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1924000/instantclient-basic-linux.x64-19.24.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1924000/instantclient-basic-linux.arm64-19.24.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1924000/instantclient-basiclite-linux.x64-19.24.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1924000/instantclient-basiclite-linux.arm64-19.24.0.0.0dbru.zip"
+    }
+  },
+  "19.23.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1923000/instantclient-basic-linux.x64-19.23.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1923000/instantclient-basic-linux.arm64-19.23.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1923000/instantclient-basiclite-linux.x64-19.23.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1923000/instantclient-basiclite-linux.arm64-19.23.0.0.0dbru.zip"
+    }
+  },
+  "19.22.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1922000/instantclient-basic-linux.x64-19.22.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1922000/instantclient-basic-linux.arm64-19.22.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1922000/instantclient-basiclite-linux.x64-19.22.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1922000/instantclient-basiclite-linux.arm64-19.22.0.0.0dbru.zip"
+    }
+  },
+  "19.21.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1921000/instantclient-basic-linux.x64-19.21.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1921000/instantclient-basiclite-linux.x64-19.21.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.20.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1920000/instantclient-basic-linux.x64-19.20.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1920000/instantclient-basiclite-linux.x64-19.20.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.19.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1919000/instantclient-basic-linux.x64-19.19.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1919000/instantclient-basic-linux.arm64-19.19.0.0.0dbru.zip"
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1919000/instantclient-basiclite-linux.x64-19.19.0.0.0dbru.zip",
+      "arm64": "https://download.oracle.com/otn_software/linux/instantclient/1919000/instantclient-basiclite-linux.arm64-19.19.0.0.0dbru.zip"
+    }
+  },
+  "19.18.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1918000/instantclient-basic-linux.x64-19.18.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1918000/instantclient-basiclite-linux.x64-19.18.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.17.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1917000/instantclient-basic-linux.x64-19.17.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1917000/instantclient-basiclite-linux.x64-19.17.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.16.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1916000/instantclient-basic-linux.x64-19.16.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1916000/instantclient-basiclite-linux.x64-19.16.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.15.0.0.1": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.15.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1915000/instantclient-basic-linux.x64-19.15.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1915000/instantclient-basiclite-linux.x64-19.15.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.14.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1914000/instantclient-basic-linux.x64-19.14.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1914000/instantclient-basiclite-linux.x64-19.14.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.13.0.0.1": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.13.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1913000/instantclient-basic-linux.x64-19.13.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1913000/instantclient-basiclite-linux.x64-19.13.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.12.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1912000/instantclient-basic-linux.x64-19.12.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1912000/instantclient-basiclite-linux.x64-19.12.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.11.0.0": {
+    "basic": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1911000/instantclient-basic-linux.x64-19.11.0.0.0dbru.zip",
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": "https://download.oracle.com/otn_software/linux/instantclient/1911000/instantclient-basiclite-linux.x64-19.11.0.0.0dbru.zip",
+      "arm64": null
+    }
+  },
+  "19.10.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.9.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.8.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.7.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.6.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "19.3.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "18.15.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "18.3.0.0": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "12.2.0.1": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  },
+  "11.2.0.4": {
+    "basic": {
+      "x64": null,
+      "arm64": null
+    },
+    "basiclite": {
+      "x64": null,
+      "arm64": null
+    }
+  }
+}
