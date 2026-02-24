@@ -46,6 +46,11 @@ RUN apk add --no-cache gcompat libaio
 COPY --from=oicd-distribution /opt/oracle /opt/oracle
 ```
 
+## What is the difference between `basic` and `basiclite`?
+
+- `basic` package includes all files required to run OCI, OCCI, and JDBC-OCI applications.
+- `basiclite` package is a smaller version of the Basic package, with only English error messages and Unicode, ASCII, and Western European character set support.
+
 ## References
 - https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
 - https://www.oracle.com/database/technologies/instant-client/linux-arm-aarch64-downloads.html
