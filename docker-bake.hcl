@@ -2,117 +2,46 @@ variable "GITHUB_REPOSITORY" {
     default = "socheatsok78/oracle-instantclient-distribution"
 }
 
+variable "ORACLE_INSTANTCLIENT_VERSION" {
+    validation {
+        condition = ORACLE_INSTANTCLIENT_VERSION != ""
+        error_message = "The variable 'ORACLE_INSTANTCLIENT_VERSION' must not be empty."
+    }
+}
+
 target "docker-metadata-action" {}
 target "github-metadata-action" {}
-target "instantclient" {
+target "buildx-bake-metadata" {
     inherits = [
         "docker-metadata-action",
         "github-metadata-action",
     ]
 }
-target "instantclient-basic" {
-    args = {
-        PACKAGE = "basic"
-    }
-}
-target "instantclient-basiclite" {
-    args = {
-        PACKAGE = "basiclite"
-    }
-}
 
 group "default" {
     targets = [
-        "v19",
-        "v19-lite",
-        "v21",
-        "v21-lite",
-        "v23",
-        "v23-lite",
+        "instantclient-pkg-basic",
+        "instantclient-pkg-basiclite",
     ]
 }
 
-group "dev" {
-    targets = [
-        "v19-dev",
-        "v19-lite-dev",
-    ]
+target "instantclient-pkg-basic" {
+  args = {
+    ORACLE_INSTANTCLIENT_VARIANT = "basic"
+    ORACLE_INSTANTCLIENT_VERSION = ORACLE_INSTANTCLIENT_VERSION
+  }
+  tags = [
+    "${GITHUB_REPOSITORY}:${ORACLE_INSTANTCLIENT_VERSION}",
+    "${GITHUB_REPOSITORY}:${ORACLE_INSTANTCLIENT_VERSION}-basic",
+  ]
 }
 
-# v19
-target "v19" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v19"
-    platforms = [
-        "linux/amd64",
-        "linux/arm64",
-    ]
-}
-target "v19-lite" {
-    inherits = [ "instantclient", "instantclient-basiclite" ]
-    context = "v19"
-    platforms = [
-        "linux/amd64",
-        "linux/arm64",
-    ]
-}
-target "v19-dev" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v19"
-    tags = [
-        "${GITHUB_REPOSITORY}:v19"
-    ]
-}
-target "v19-lite-dev" {
-    inherits = [ "instantclient", "instantclient-basiclite" ]
-    context = "v19"
-    tags = [
-        "${GITHUB_REPOSITORY}:v19-lite"
-    ]
-}
-
-# v21
-target "v21" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v21"
-    platforms = [
-        "linux/amd64",
-    ]
-}
-target "v21-lite" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v21"
-    platforms = [
-        "linux/amd64",
-    ]
-}
-target "v21-dev" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v21"
-    tags = [
-        "${GITHUB_REPOSITORY}:v21"
-    ]
-}
-
-# v23
-target "v23" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v23"
-    platforms = [
-        "linux/amd64",
-    ]
-}
-target "v23-lite" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v23"
-    platforms = [
-        "linux/amd64",
-    ]
-}
-target "v23-dev" {
-    inherits = [ "instantclient", "instantclient-basic" ]
-    context = "v23"
-    tags = [
-        "${GITHUB_REPOSITORY}:v23"
-    ]
+target "instantclient-pkg-basiclite" {
+  args = {
+    ORACLE_INSTANTCLIENT_VARIANT = "basiclite"
+    ORACLE_INSTANTCLIENT_VERSION = ORACLE_INSTANTCLIENT_VERSION
+  }
+  tags = [
+    "${GITHUB_REPOSITORY}:${ORACLE_INSTANTCLIENT_VERSION}-basiclite",
+  ]
 }
