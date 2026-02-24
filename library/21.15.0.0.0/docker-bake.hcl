@@ -1,5 +1,9 @@
+variable "GITHUB_REPOSITORY_OWNER" {
+  default = "socheatsok78"
+}
+
 variable "GITHUB_REPOSITORY" {
-  default = "socheatsok78/oracle-instantclient-distribution"
+  default = "${GITHUB_REPOSITORY_OWNER}/docker-oracle-instantclient"
 }
 
 variable "VERSION" {
@@ -10,21 +14,49 @@ target "docker-metadata-action" {}
 
 target "github-metadata-action" {}
 
-target "default" {
-  matrix = {
-    "VARIANT" = [
-      "basic",
-      "basiclite",
-    ]
-  }
-  name = "${VARIANT}"
+group "default" {
+  targets = [
+    "oracle-instantclient-basic",
+    "oracle-instantclient-basiclite",
+  ]
+}
+
+target "oracle-instantclient-basic" {
+  inherits = [
+    "docker-metadata-action",
+    "github-metadata-action",
+  ]
   args = {
-    "VARIANT" = VARIANT
+    "VARIANT" = "basic"
   }
   platforms = [
     "linux/amd64",
   ]
   tags = [
-    "${GITHUB_REPOSITORY}:${VERSION}-${VARIANT}",
+    "docker.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}",
+    "ghcr.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}",
+    "docker.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basic",
+    "ghcr.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basic",
+    "docker.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basic",
+    "ghcr.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basic",
+  ]
+}
+
+target "oracle-instantclient-basiclite" {
+  inherits = [
+    "docker-metadata-action",
+    "github-metadata-action",
+  ]
+  args = {
+    "VARIANT" = "basiclite"
+  }
+  platforms = [
+    "linux/amd64",
+  ]
+  tags = [
+    "docker.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basiclite",
+    "ghcr.io/${replace(GITHUB_REPOSITORY, "docker-", "")}:${VERSION}-basiclite",
+    "docker.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basiclite",
+    "ghcr.io/${GITHUB_REPOSITORY_OWNER}/oracle-instantclient-distribution:${VERSION}-basiclite",
   ]
 }
