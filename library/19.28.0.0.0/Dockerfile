@@ -15,7 +15,7 @@ ADD https://download.oracle.com/otn_software/linux/instantclient/1928000/instant
 FROM instantclient-${VARIANT}-${TARGETARCH} AS instantclient
 
 FROM ghcr.io/socheatsok78/unzip:latest AS oic
-COPY --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip
+COPY --link --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip
 RUN <<EOF
 	mkdir -p /opt/oracle
 	unzip /tmp/instantclient-linux.zip -d /opt/oracle

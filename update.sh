@@ -155,7 +155,7 @@ function dockerfile () {
 	echo "FROM instantclient-\${VARIANT}-\${TARGETARCH} AS instantclient"
 	echo ""
 	echo "FROM ghcr.io/socheatsok78/unzip:latest AS oic"
-	echo "COPY --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip"
+	echo "COPY --link --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip"
 	echo "RUN <<EOF"
 	echo -e "\tmkdir -p /opt/oracle"
 	echo -e "\tunzip /tmp/instantclient-linux.zip -d /opt/oracle"
