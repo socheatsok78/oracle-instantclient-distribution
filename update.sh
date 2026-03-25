@@ -154,7 +154,7 @@ function dockerfile () {
 	echo ""
 	echo "FROM instantclient-\${VARIANT}-\${TARGETARCH} AS instantclient"
 	echo ""
-	echo "FROM ghcr.io/socheatsok78/unzip:latest AS oic"
+	echo "FROM --platform=$BUILDPLATFORM ghcr.io/socheatsok78/unzip:latest AS oic"
 	echo "COPY --link --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip"
 	echo "RUN <<EOF"
 	echo -e "\tmkdir -p /opt/oracle"
@@ -163,7 +163,7 @@ function dockerfile () {
 	echo "EOF"
 	echo ""
 	echo "FROM scratch"
-	echo "COPY --from=oic /opt/oracle /opt/oracle"
+	echo "COPY --link --from=oic /opt/oracle /opt/oracle"
 }
 
 function main() {
