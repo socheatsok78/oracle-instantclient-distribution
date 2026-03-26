@@ -14,7 +14,7 @@ ADD https://download.oracle.com/otn_software/linux/instantclient/1928000/instant
 
 FROM instantclient-${VARIANT}-${TARGETARCH} AS instantclient
 
-FROM --platform=$BUILDPLATFORM ghcr.io/socheatsok78/unzip:latest AS oic
+FROM --platform=$BUILDPLATFORM ghcr.io/socheatsok78/unzip:latest AS lib
 COPY --link --from=instantclient /instantclient-linux.zip /tmp/instantclient-linux.zip
 RUN <<EOF
 	mkdir -p /opt/oracle
@@ -23,4 +23,4 @@ RUN <<EOF
 EOF
 
 FROM scratch
-COPY --link --from=oic /opt/oracle /opt/oracle
+COPY --link --from=lib /opt/oracle /opt/oracle
